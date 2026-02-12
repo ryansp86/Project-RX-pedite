@@ -1,6 +1,8 @@
 # Project RX-pedite: Specialty Pharmacy Operational Audit
 ### Optimizing Prior Authorization Lifecycles & Speed-to-Therapy
 ![Executive Dashboard Preview](assets/dashboard_preview.png)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ryansp86/Project-Rx-pedite/blob/main/notebooks/Project_RX-pedite_Case_Study.ipynb)
+
 ---
 
 > **Note on Data Ethics:** This is a **hypothetical case study** developed for a professional portfolio. All data utilized in this audit is **100% synthetic** and was engineered to simulate real-world specialty pharmacy workflows while maintaining complete data privacy. No actual Patient Health Information (PHI) or provider records were used in this analysis.
@@ -121,5 +123,6 @@ This table defines the key variables utilized in the **Project RX-pedite** audit
 
 [LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
 [Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
+
 
 
