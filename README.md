@@ -1,60 +1,73 @@
-This README.md is designed to serve as the high-level "Executive Summary" for your portfolio. It highlights the business value and your technical expertise immediately, ensuring a recruiter understands the impact of your work before they even open the code.
+# Project RX-pedite: Specialty Pharmacy Operational Audit
+### Optimizing Prior Authorization Lifecycles & Speed-to-Therapy
 
-Project RX-pedite: Specialty Pharmacy Operational Audit
-Optimizing Prior Authorization Lifecycles & Speed-to-Therapy
-Project Overview
-Project RX-pedite is a comprehensive data analysis of the Prior Authorization (PA) lifecycle within a major national specialty pharmacy. By analyzing 10,000+ records of clinical and operational data, this study identifies significant administrative friction points that delay life-altering therapy for patients in high-complexity specialties like Rheumatology and Gastroenterology.
+---
 
-The "Smoking Gun" Insight
-The primary discovery of this audit is the 141% "Fax Tax."
+> **Note on Data Ethics:** This is a **hypothetical case study** developed for a professional portfolio. All data utilized in this audit is **100% synthetic** and was engineered to simulate real-world specialty pharmacy workflows while maintaining complete data privacy. No actual Patient Health Information (PHI) or provider records were used in this analysis.
 
-The Problem: Manual Fax submissions are the single greatest driver of administrative latency.
+---
 
-The Delta: While electronic (ePA) submissions move through the system with high efficiency, manual faxes perform 141% slower, adding unnecessary days to the patient wait time.
+## Project Overview
+Project RX-pedite is a diagnostic audit of the Prior Authorization (PA) lifecycle within a high-volume specialty pharmacy environment. By analyzing 10,000+ records of clinical and operational data, this study identifies the **"Fax Tax"**—a significant administrative bottleneck caused by manual workflows that delay life-altering therapy for patients.
 
-Current State: The network maintains a 2.8-day average Turnaround Time (TAT). While this meets the 3.0-day corporate benchmark, the variance caused by manual workflows masks a significant opportunity for "Best-in-Class" performance (<24 hours).
+---
 
-Key Features & Methodology
-This project follows the Google Data Analytics Professional framework:
+## 1. Ask: The Business Challenge
+**Business Task:** Identify the root causes of administrative latency in the Prior Authorization process to improve speed-to-therapy for complex clinical specialties (Rheumatology, Gastroenterology, etc.).
 
-ASK: Defined KPIs including Network TAT, ePA Adoption Rates, and Denial Root Causes.
+* **The Problem:** While the network meets its 3.0-day corporate benchmark (averaging 2.8 days), manual workflows mask a significant opportunity for "Best-in-Class" performance (<24 hours).
+* **Key KPI:** Turnaround Time (TAT) variance between electronic (ePA) and manual (Fax) submission channels.
 
-PREPARE: Utilized a synthetic dataset to mimic real-world specialty pharmacy workflows while maintaining 100% HIPAA compliance.
+## 2. Prepare: Data Integrity & Privacy
+To maintain 100% HIPAA compliance while ensuring high-fidelity clinical logic, this project utilizes a **synthetic dataset**. 
 
-PROCESS: Performed data cleaning in Python, resolving fragmented clinical naming (e.g., "Gastro" vs. "Gastroenterology") and handling missing clinical denial reasons.
+* **Scenario Foundation:** The project simulates a diagnostic audit within a national specialty pharmacy network.
+* **Data Engineering:** Engineered using the **Python Faker library** to simulate real-world workflows, including provider NPIs, clinical denial reasons, and submission timestamps.
+* **Privacy Assurance:** By utilizing synthetic data, this analysis demonstrates technical proficiency in handling clinical variables without accessing or compromising sensitive Patient Health Information (PHI).
 
-ANALYZE: Conducted diagnostic analysis to correlate submission channels with therapy delays.
+## 3. Process: Data Cleaning & Standardization
+The raw data required significant "Process" phase rigor to ensure analytical accuracy:
+* **Naming Conventions:** Standardized fragmented clinical naming (unifying "Gastro," "G.I.," and "Gastroenterology") using Python (Pandas).
+* **Handling Nulls:** Resolved missing clinical denial codes by categorizing them into "Administrative" vs. "Clinical" buckets to identify root causes of friction.
 
-SHARE: Developed a 2x2 Executive Dashboard for at-a-glance stakeholder decision-making.
+## 4. Analyze: The "141% Fax Tax" Insight
+Through diagnostic analysis, a "Smoking Gun" bottleneck was identified:
+* **The Discovery:** Manual Fax submissions are the primary driver of latency. 
+* **The Delta:** Manual faxes perform **141% slower** than electronic (ePA) submissions.
+* **The Impact:** Even though the team hits the 3.0-day target, the reliance on manual faxing creates an unnecessary "tax" of days added to the patient wait time.
 
-ACT: Proposed a three-tier strategic roadmap for digital migration and clinical automation.
+## 5. Share: Executive Visualization
+Findings were translated into a high-impact Tableau Dashboard designed for stakeholder decision-making.
 
-The Strategic Roadmap (Action Plan)
-Tier 1 (Immediate): Targeted ePA migration pilot for "High-Fax" Rheumatology providers to reclaim 1,200+ manual intake hours annually.
+* **Dashboard Link:** [**View Interactive Tableau Dashboard Here**](https://public.tableau.com/views/RX-pedite_Operational_Audit_Dashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* **Visual Focus:** A 2x2 grid identifying "High-Volume/High-Fax" providers as the primary targets for digital migration.
 
-Tier 2 (Optimization): Implementation of front-end "Step Therapy" logic gates to deflect predictable administrative denials.
+## 6. Act: The 3-Tier Strategic Roadmap
+Based on the data, I proposed a tiered solution to scale digital adoption and improve patient outcomes:
+* **Tier 1 (Immediate):** Targeted ePA migration for high-volume Rheumatology providers to reclaim 1,200+ manual intake hours annually.
+* **Tier 2 (Optimization):** Implementation of front-end logic gates to deflect predictable administrative denials.
+* **Tier 3 (Innovation):** Launch of a "Clinical Gold-Carding" program for high-compliance providers to reduce speed-to-therapy to <24 hours.
 
-Tier 3 (Innovation): Launch of a Clinical Gold-Carding Program for high-compliance providers to reduce speed-to-therapy to <24 hours.
+---
 
-Tech Stack & Tools
-SQL: Relational database extraction and root-cause diagnostic queries.
+## Tech Stack & Tools
+* **Python (Pandas, NumPy, Faker):** Data generation, cleaning, and statistical analysis.
+* **SQL:** Relational database logic and diagnostic queries.
+* **Tableau:** Interactive executive-level data visualization.
+* **Google Colab:** Collaborative environment for reproducible Python code.
 
-Python (Pandas/NumPy): Data manipulation, cleaning, and statistical calculations.
+## Repository Structure
+```text
+├── Project_RX_pedite_Notebook.ipynb   # Full Python cleaning & analysis code
+├── /data                              # Raw and processed synthetic datasets
+├── /scripts                           # SQL diagnostic queries
+├── /assets                            # Dashboard screenshots and project icons
+└── README.md                          # Project executive summary
+```
 
-Matplotlib/Seaborn: Executive-level data visualization and heatmap generation.
 
-Google Colab: Cloud-based collaborative environment for reproducible analysis.
+## Contact
+**Sean Patrick Ryan** Data Analyst | Albuquerque, NM  
 
-Folder Structure
-/Project_RX_pedite_Notebook.ipynb: The full technical analysis and code.
-
-/data: Raw and processed synthetic datasets.
-
-/scripts: SQL diagnostic queries used for initial extraction.
-
-/assets: High-resolution exports of the Executive Dashboard.
-
-Contact & Author
-Sean Patrick Ryan Data Analyst | Albuquerque, NM LinkedIn: [Your Link Here]
-
-Portfolio: [Your Portfolio Link Here]
+[LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
+[Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
