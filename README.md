@@ -1,7 +1,7 @@
 # Project RX-pedite: Specialty Pharmacy Operational Audit
 ### Optimizing Prior Authorization Lifecycles & Speed-to-Therapy
 ![Executive Dashboard Preview](assets/dashboard_preview.png)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ryansp86/Project-Rx-pedite/blob/main/notebooks/Project_RX-pedite_Case_Study.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ryansp86/Project-RX-pedite/blob/main/notebooks/Project_RX_pedite_Notebook.ipynb)
 
 ---
 
@@ -123,6 +123,7 @@ This table defines the key variables utilized in the **Project RX-pedite** audit
 
 [LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
 [Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
+
 
 
 
