@@ -38,8 +38,9 @@ The following script was used to resolve naming fragmentation, handle missing cl
 ```python
 import pandas as pd
 
-# 1. Load the raw audit data
-df = pd.read_csv('data/raw/pa_data_v3.csv')
+# 1. Load the raw audit data using the permanent GitHub URL for reproducibility
+raw_url = 'https://raw.githubusercontent.com/ryansp86/Project-RX-pedite/main/data/raw/pa_data_v3.csv'
+df = pd.read_csv(raw_url)
 
 # 2. Standardize Specialty Naming
 # Consolidating fragmented names (e.g., "Gastro" vs "Gastroenterology")
@@ -124,6 +125,7 @@ This table defines the key variables utilized in the **Project RX-pedite** audit
 
 [LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
 [Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
+
 
 
 
