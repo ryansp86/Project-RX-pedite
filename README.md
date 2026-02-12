@@ -1,7 +1,7 @@
 # Project RX-pedite: Specialty Pharmacy Operational Audit
 ### Optimizing Prior Authorization Lifecycles & Speed-to-Therapy
-![Executive Dashboard Preview](assets/dashboard_preview.png)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ryansp86/Project-RX-pedite/blob/main/notebooks/Project_RX-pedite_Case_Study.ipynb)
+
 
 ---
 
@@ -76,6 +76,7 @@ Through diagnostic analysis, a "Smoking Gun" bottleneck was identified:
 ## 5. Share: Executive Visualization
 Findings were translated into a high-impact Tableau Dashboard designed for stakeholder decision-making.
 
+![Executive Dashboard Preview](assets/dashboard_preview.png)
 * **Dashboard Link:** [**View Interactive Tableau Dashboard Here**](https://public.tableau.com/views/RX-pedite_Operational_Audit_Dashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 * **Visual Focus:** A 2x2 grid identifying "High-Volume/High-Fax" providers as the primary targets for digital migration.
 
@@ -123,6 +124,7 @@ This table defines the key variables utilized in the **Project RX-pedite** audit
 
 [LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
 [Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
+
 
 
 
