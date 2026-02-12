@@ -26,9 +26,44 @@ To maintain 100% HIPAA compliance while ensuring high-fidelity clinical logic, t
 * **Privacy Assurance:** By utilizing synthetic data, this analysis demonstrates technical proficiency in handling clinical variables without accessing or compromising sensitive Patient Health Information (PHI).
 
 ## 3. Process: Data Cleaning & Standardization
-The raw data required significant "Process" phase rigor to ensure analytical accuracy:
-* **Naming Conventions:** Standardized fragmented clinical naming (unifying "Gastro," "G.I.," and "Gastroenterology") using Python (Pandas).
-* **Handling Nulls:** Resolved missing clinical denial codes by categorizing them into "Administrative" vs. "Clinical" buckets to identify root causes of friction.
+The raw audit data required significant "Process" phase rigor to ensure analytical accuracy. By utilizing Python and the Pandas library, I transformed the "Chaos Monkey" dataset into a standardized, analysis-ready format.
+
+
+
+### **Technical Implementation**
+The following script was used to resolve naming fragmentation, handle missing clinical values, and standardize date formats for Tableau integration.
+
+```python
+import pandas as pd
+
+# 1. Load the raw audit data
+df = pd.read_csv('data/raw/pa_data_v3.csv')
+
+# 2. Standardize Specialty Naming
+# Consolidating fragmented names (e.g., "Gastro" vs "Gastroenterology")
+df['Provider_Specialty'] = df['Provider_Specialty'].replace('Gastro', 'Gastroenterology')
+
+# 3. Resolve Missing Specialty Data
+# Labeling 511 null records as 'Unknown/General Practice' to maintain audit volume
+df['Provider_Specialty'] = df['Provider_Specialty'].fillna('Unknown/General Practice')
+
+# 4. Clean Denial Logic
+# Labeling nulls as 'N/A' for Approved claims to prevent root-cause skewing
+df['Denial_Reason'] = df['Denial_Reason'].fillna('N/A')
+
+# 5. Temporal Standardization
+# Formatting all timestamps for seamless Tableau time-series analysis
+date_cols = ['Start_Date', 'Need_By_Date', 'Last_Action_Date']
+for col in date_cols:
+    df[col] = pd.to_datetime(df[col]).dt.strftime('%Y-%m-%d %H:%M:%S')
+
+# 6. Export Processed Data
+df.to_csv('data/processed/pa_data_cleaned.csv', index=False)
+```
+### **Key Cleaning Results**
+* **Naming Integrity:** Consolidated all clinical specialties into unified professional categories (e.g., "Gastro" → "Gastroenterology") to ensure accurate specialty-level reporting.
+* **Data Retention:** Preserved 100% of the audit volume by intelligently categorizing 511 missing records as "Unknown/General Practice" rather than deleting incomplete data.
+* **Format Readiness:** Prepared all 10,000+ records for direct import into Tableau by standardizing clinical timestamps into a uniform YYYY-MM-DD format.
 
 ## 4. Analyze: The "141% Fax Tax" Insight
 Through diagnostic analysis, a "Smoking Gun" bottleneck was identified:
@@ -64,10 +99,26 @@ Based on the data, I proposed a tiered solution to scale digital adoption and im
 ├── /assets                            # Dashboard screenshots and project icons
 └── README.md                          # Project executive summary
 ```
+---
 
+## Data Dictionary
+This table defines the key variables utilized in the **Project RX-pedite** audit.
+
+| Column Name | Description | Data Type |
+| :--- | :--- | :--- |
+| **PA_ID** | Unique identifier for the Prior Authorization request. | String (UUID) |
+| **Patient_Age** | Age of the patient at the time of the request. | Integer |
+| **Submission_Channel**| The method used to submit the request (Fax, Portal, Phone). | String |
+| **Provider_Specialty** | The clinical specialty of the prescribing physician. | String |
+| **Status** | Final outcome of the request (Approved or Denied). | String |
+| **Turnaround_Time_Days**| Total calendar days from submission to final determination. | Integer |
+| **Missed_Deadline** | Indicator if the TAT exceeded the 3.0-day benchmark. | Boolean |
+
+---
 
 ## Contact
-**Sean Patrick Ryan** Data Analyst | Albuquerque, NM  
+**Sean Ryan** | Albuquerque, NM  
 
 [LinkedIn Profile](https://www.linkedin.com/in/sean-ryan-58558294/)  
 [Tableau Public Portfolio](https://public.tableau.com/app/profile/sean.ryan4098/)
+
